@@ -42,19 +42,17 @@ Make sure you have the following installed:
 ### Authentication
 - `POST /api/auth/register` - Register a new user
 - `POST /api/auth/login` - Login user and get JWT token
+- `POST /api/auth/update-profile` - Update profile picture
 
 ### Chat
-- `GET /api/chat` - Get all chats for a user
-- `POST /api/chat` - Create a new chat
+- `GET /api/messages/users` - Get all users
+- `GET /api/messages/:id` - Get a single chat messages
+- `POST /api/messages/send/:id` - Send Messages
 
-### Messages
-- `POST /api/message` - Send a message
-- `GET /api/message/:chatId` - Get messages for a chat
 
 ## WebSocket Events (Socket.IO)
 - `connect` - Establish a socket connection
-- `message` - Send/receive a message
-- `join-room` - Join a specific chat room
-- `typing` - Notify when a user is typing
+- `newMessage` - Send/receive a message
+- `getOnlineUsers` - Get all online users
 
 
