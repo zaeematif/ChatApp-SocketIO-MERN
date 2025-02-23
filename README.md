@@ -1,3 +1,4 @@
+
 # WhatsApp Clone (MERN + Socket.IO)
 
 A real-time chat application built using the MERN (MongoDB, Express, React, Node.js) stack with Socket.IO for instant messaging and JWT authentication.
@@ -53,4 +54,7 @@ Make sure you have the following installed:
 - `newMessage` - Send/receive a message
 - `getOnlineUsers` - Get all online users
 
+![image](https://github.com/user-attachments/assets/d3f122b6-d011-4c6f-a4ea-aa6efc3fabd2)
+![image](https://github.com/user-attachments/assets/7394b343-ec8d-47cc-a195-ef81ba3151ad)
+![image](https://github.com/user-attachments/assets/dfeda020-96d0-4f08-952c-aed0d886a38c)
 
