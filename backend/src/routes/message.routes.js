@@ -8,7 +8,7 @@ router.get('/users', protectRoute, getUsersForSidebar);
 router.get('/:id', protectRoute, getMessages)
 
 //post messages
-router.get('/send/:id', protectRoute, sendMessage)
+router.post('/send/:id', protectRoute, sendMessage)
 
 export default router;
 

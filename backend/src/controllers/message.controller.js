@@ -1,5 +1,7 @@
 import User from "../models/user.model.js";
 import Message from "../models/message.model.js";
+import cloudinary from "../lib/cloudinary.js";
+import { getRecieverSocketId, io } from "../lib/socket.js";
 
 //GET SIDEBAR USERS
 export const getUsersForSidebar = async (req, res) => {
@@ -46,11 +48,12 @@ export const sendMessage = async (req, res) => {
     const senderId = req.user._id;
 
     let imageUrl;
+    
 
     //if image present - upload on cloudinary
     if (image) {
       const uploadResponse = await cloudinary.uploader.upload(image);
-      imageUrl = uploadResponse;
+      imageUrl = uploadResponse.secure_url;
     }
 
     const newMessage = new Message({
@@ -62,7 +65,12 @@ export const sendMessage = async (req, res) => {
 
     await newMessage.save();
 
-    //todo : add real-time message functionality
+    const receiverSocketId = getRecieverSocketId(receiverId)
+
+    //if user online send to receiver
+    if(receiverSocketId){
+      io.to(receiverSocketId).emit("newMessage", newMessage)
+    }
 
     res.status(201).json(newMessage)
   } catch (error) {
