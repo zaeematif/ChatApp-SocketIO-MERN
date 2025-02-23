@@ -23,8 +23,6 @@ A real-time chat application built using the MERN (MongoDB, Express, React, Node
 - **Authentication:** JWT (JSON Web Token)
 - **HTTP Requests:** Axios
 
-## Installation
-
 ### Prerequisites
 Make sure you have the following installed:
 - Node.js
